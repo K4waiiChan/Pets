@@ -18,9 +18,6 @@ namespace PetsAPI.Database
 
         }
 
-        /// <summary>
-        /// Account table
-        /// </summary>
         public DbSet<Pet> Pets { get; set; }
 
         /// <summary>
