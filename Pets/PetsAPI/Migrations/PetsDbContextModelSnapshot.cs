@@ -20,32 +20,36 @@ namespace PetsAPI.Migrations
                 .HasAnnotation("ProductVersion", "2.0.3-rtm-10026")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("PetsAPI.Models.Pet", b =>
+            modelBuilder.Entity("PetsAPI.Models.Mascota", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Age");
+                    b.Property<string>("Descripcion");
 
-                    b.Property<string>("Diseases");
+                    b.Property<int>("Edad");
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Emfermedades");
 
-                    b.Property<string>("Origin");
+                    b.Property<string>("Especie");
 
-                    b.Property<string>("Race");
+                    b.Property<bool>("Estado");
 
-                    b.Property<DateTime>("RegistrationDate");
+                    b.Property<DateTime>("FechaDeRegistro");
 
-                    b.Property<string>("Sex");
+                    b.Property<string>("Imagen");
 
-                    b.Property<string>("Species");
+                    b.Property<string>("Nombre");
 
-                    b.Property<bool>("State");
+                    b.Property<string>("Origen");
+
+                    b.Property<string>("Raza");
+
+                    b.Property<string>("Sexo");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Pets");
+                    b.ToTable("Mascota");
                 });
 #pragma warning restore 612, 618
         }

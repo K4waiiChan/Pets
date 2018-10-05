@@ -12,7 +12,7 @@ using PetsAPI.Models;
 namespace PetsAPI.Controllers
 {
     [Produces("application/json")]
-    [Route("api/pets")]
+    [Route("api/mascotas")]
     public class PetsController : Controller
     {
         private PetsRepositorie petsRepositorie;
@@ -22,19 +22,29 @@ namespace PetsAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<Pet> GetAll()
+        public IEnumerable<Mascota> GetAll()
         {
             return this.petsRepositorie.GetAll();
         }
 
         [HttpGet("{id}")]
-        public Pet Get(int id)
+        public IActionResult Get(int id)
         {
-            return this.petsRepositorie.GetOne(id);
+            IActionResult response;
+            try
+            {
+                response = Ok(this.petsRepositorie.GetOne(id));
+
+            }
+            catch (Exception exe)
+            {
+                response = BadRequest(exe.Message);
+            }
+            return response;
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody]Pet pet)
+        public IActionResult Post([FromBody]Mascota pet)
         {
             IActionResult response;
             try
@@ -50,7 +60,7 @@ namespace PetsAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put([FromBody]Pet pet, int id)
+        public IActionResult Put([FromBody]Mascota pet, int id)
         {
             IActionResult response;
             try

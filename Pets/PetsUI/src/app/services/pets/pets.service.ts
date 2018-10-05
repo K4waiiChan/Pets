@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class PetsService {
   url: string;
   constructor(public http: HttpClient) {
-    this.url = require('../../../assets/config.json').url + '/api/pets';
+    this.url = 'http://petsapiprueba.azurewebsites.net/api/mascotas';
   }
 
   add(data: any) {

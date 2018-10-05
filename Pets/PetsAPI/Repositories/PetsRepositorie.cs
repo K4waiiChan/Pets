@@ -17,31 +17,33 @@ namespace PetsAPI.Repositories
             this.PetsDbContext = petsDbContext;
         }
 
-        public void Create(Pet pet)
+        public void Create(Mascota pet)
         {
-            this.PetsDbContext.Pets.Add(pet);
+            pet.Imagen = "";
+            pet.FechaDeRegistro = DateTime.Now;
+            this.PetsDbContext.Mascota.Add(pet);
             this.PetsDbContext.SaveChanges();
         }
 
-        public IEnumerable<Pet> GetAll()
+        public IEnumerable<Mascota> GetAll()
         {
-            return this.PetsDbContext.Pets.ToList();
+            return this.PetsDbContext.Mascota.ToList();
         }
 
-        public Pet GetOne(int id)
+        public Mascota GetOne(int id)
         {
-            Pet pet = this.PetsDbContext.Pets.Find(id);
+            Mascota pet = this.PetsDbContext.Mascota.Find(id);
             if (pet == null)
             {
-                throw new Exception("Pet with id:" + id + " not found");
+                throw new Exception("Mascota con id:" + id + " no encontrada");
             }
             return pet;
         }
 
-        public void Edit(int id, Pet newPet)
+        public void Edit(int id, Mascota newPet)
         {
-            Pet pet = this.GetOne(id);
-            pet.Name = newPet.Name;
+            Mascota pet = this.GetOne(id);
+            pet.Nombre = newPet.Nombre;
             this.PetsDbContext.SaveChanges();
         }
 

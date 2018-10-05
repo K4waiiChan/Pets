@@ -18,6 +18,7 @@ export class PetsFormPageComponent implements OnInit {
       sex: new FormControl('', Validators.required),
       origin: new FormControl('', Validators.required),
       diseases: new FormControl('', Validators.required),
+      description: new FormControl('', Validators.required),
     });
    }
 

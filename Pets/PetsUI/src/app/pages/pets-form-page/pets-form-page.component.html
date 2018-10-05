@@ -1,13 +1,14 @@
 <mat-card>
     <h2>Register Pet</h2>
     <form>
-        <app-form-input [placeholder]="'Name'" (changeValue)="validators.get('name').setValue($event)"></app-form-input>
-        <app-form-input [placeholder]="'Species'" (changeValue)="validators.get('species').setValue($event)"></app-form-input>
-        <app-form-input [placeholder]="'Race'" (changeValue)="validators.get('race').setValue($event)"></app-form-input>
-        <app-form-input [placeholder]="'Age'" [type]="'number'" (changeValue)="validators.get('age').setValue($event)"></app-form-input>
-        <app-form-input [placeholder]="'Sex'" (changeValue)="validators.get('sex').setValue($event)"></app-form-input>
-        <app-form-input [placeholder]="'Origin'" (changeValue)="validators.get('origin').setValue($event)"></app-form-input>
-        <app-form-input [placeholder]="'Diseases'" (changeValue)="validators.get('diseases').setValue($event)"></app-form-input><br>
+        <app-form-input [placeholder]="'Nombre'" (changeValue)="validators.get('name').setValue($event)"></app-form-input>
+        <app-form-input [placeholder]="'especie'" (changeValue)="validators.get('species').setValue($event)"></app-form-input>
+        <app-form-input [placeholder]="'Raza'" (changeValue)="validators.get('race').setValue($event)"></app-form-input>
+        <app-form-input [placeholder]="'Edad'" [type]="'number'" (changeValue)="validators.get('age').setValue($event)"></app-form-input>
+        <app-form-input [placeholder]="'Sexo'" (changeValue)="validators.get('sex').setValue($event)"></app-form-input>
+        <app-form-input [placeholder]="'Origen'" (changeValue)="validators.get('origin').setValue($event)"></app-form-input>
+        <app-form-input [placeholder]="'Emfermedades'" (changeValue)="validators.get('diseases').setValue($event)"></app-form-input>
+        <app-form-input [placeholder]="'Descripcion'" (changeValue)="validators.get('description').setValue($event)"></app-form-input><br>
         <button type="button" mat-raised-button color="accent" (click)="submit()">Submit</button>
     </form>
 </mat-card>

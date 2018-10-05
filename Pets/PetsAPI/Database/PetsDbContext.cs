@@ -18,7 +18,7 @@ namespace PetsAPI.Database
 
         }
 
-        public DbSet<Pet> Pets { get; set; }
+        public DbSet<Mascota> Mascota { get; set; }
 
         /// <summary>
         /// DataBase configuration
